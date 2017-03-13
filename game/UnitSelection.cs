@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class UnitSelection : MonoBehaviour {
+
+    
 
     bool isSelecting = false;
     Vector3 mousePosition1;

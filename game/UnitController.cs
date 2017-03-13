@@ -61,13 +61,13 @@ public class UnitController : MonoBehaviour {
         unitAnimator.SetBool(runHash, state);
     }
 
-    //public void OnMouseDown()
-    //{
-    //    unitManager.ClearSelectedUnits();
+    public void OnMouseUp()
+    {
+        unitManager.ClearSelectedUnits();
 
-    //    Debug.Log("Selected " + name);
-    //    unitManager.AddSelectedUnit(this);
-    //}
+        Debug.Log("Selected " + name);
+        unitManager.AddSelectedUnit(this);
+    }
 
     IEnumerator Movement(Vector3 target)
     {

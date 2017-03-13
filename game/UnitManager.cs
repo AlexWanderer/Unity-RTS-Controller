@@ -38,28 +38,6 @@ public class UnitManager : MonoBehaviour {
             ClearSelectedUnits();
             AddSelectedUnit();
         }
-
-        
-
-        /*
-        mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hitInfo;
-
-        if (unitsControllerList.Count > 0)
-        {
-            if (Input.GetMouseButtonUp(1))
-            {
-                if (groundCollider.Raycast(mouseRay,out hitInfo, Mathf.Infinity))
-                {
-                    foreach (UnitController unit in selectedUnits)
-                    {
-                        unit.SetRun(true);
-                        unit.Target = hitInfo.point;
-                    }
-                }
-            }
-        }
-        */
     }
 
     public void AddUnit(UnitController unitController)
