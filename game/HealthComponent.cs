@@ -44,4 +44,22 @@ public class HealthComponent : MonoBehaviour {
         }
             
     }
+
+    public int Healt
+    {
+        get
+        {
+            return currentHealth;
+        }
+        set
+        {
+
+            if (value < 0)
+                currentHealth = 0;
+            else if (value > HEALTH)
+                currentHealth = HEALTH;
+            else
+                currentHealth = value;
+        }
+    }
 }
