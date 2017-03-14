@@ -6,19 +6,6 @@ using UnityEngine.UI;
 public class SelectionAreaManager : MonoBehaviour {
 
     
-
-    // Use this for initialization
-    void Start ()
-    {
-        
-    }
-	
-	
-	void Update ()
-    {
-        
-	}
-
     void OnGUI()
     {
         // Left example

@@ -5,6 +5,7 @@ using UnityEngine;
 public class UnitController : MonoBehaviour {
 
     public bool engaged = false;
+    public UnitStatus unitStatus;
 
     Animator unitAnimator;
     UnitManager unitManager;
@@ -12,6 +13,8 @@ public class UnitController : MonoBehaviour {
     int runHash = Animator.StringToHash("run");
     int chargeHash = Animator.StringToHash("charge");
     int attackHash = Animator.StringToHash("attack");
+
+    UnitSelection unitSelection = Toolbox.GetScript<UnitSelection>();
 
     private Vector3 target;
 
@@ -63,8 +66,6 @@ public class UnitController : MonoBehaviour {
 
     public void OnMouseUp()
     {
-        unitManager.ClearSelectedUnits();
-
         Debug.Log("Selected " + name);
         unitManager.AddSelectedUnit(this);
     }

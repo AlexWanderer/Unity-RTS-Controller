@@ -7,7 +7,7 @@ public class HealthComponent : MonoBehaviour {
     Texture2D foregroundTexture;
     Texture2D backgroundTexture;
 
-    UnitManager _unitManager;
+    public UnitStatus unitStatus;
 
     const int HEALTH = 100;
     int currentHealth = HEALTH;
@@ -21,8 +21,6 @@ public class HealthComponent : MonoBehaviour {
         backgroundTexture = new Texture2D(1, 1);
         backgroundTexture.SetPixel(0, 0, Color.black);
         backgroundTexture.Apply();
-
-        _unitManager = Toolbox.GetScript<UnitManager>();
     }
 	
 	// Update is called once per frame
@@ -35,7 +33,7 @@ public class HealthComponent : MonoBehaviour {
     void OnGUI()
     {
 
-        if (_unitManager.isSelected(this.gameObject))
+        if (unitStatus.Selected)
         {
             Vector3 unitPos = Camera.main.WorldToScreenPoint(this.transform.position);
 

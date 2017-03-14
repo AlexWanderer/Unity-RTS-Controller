@@ -3,13 +3,19 @@
 public class UnitSelection : MonoBehaviour {
 
     
-
     bool isSelecting = false;
     Vector3 mousePosition1;
+
+    UnitManager unitManager;
 
     void Awake()
     {
         Toolbox.AddScript(this);
+    }
+
+    void Start()
+    {
+        unitManager = Toolbox.GetScript<UnitManager>();
     }
 
     void Update()
@@ -23,6 +29,7 @@ public class UnitSelection : MonoBehaviour {
         // If we let go of the left mouse button, end selection
         if (Input.GetMouseButtonUp(0))
             isSelecting = false;
+        
     }
 
     void OnGUI()
@@ -46,4 +53,11 @@ public class UnitSelection : MonoBehaviour {
 
         return viewportBounds.Contains(camera.WorldToViewportPoint(gameObject.transform.position));
     }
+
+    public void SelectUnit( UnitController unitController)
+    {
+        unitManager.AddSelectedUnit(unitController);
+    }
+
+    
 }

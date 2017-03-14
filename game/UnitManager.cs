@@ -53,34 +53,29 @@ public class UnitManager : MonoBehaviour {
             {
                 selectedUnits.Add(unitController);
                 Debug.Log("Selected: " + unitController.name);
+                unitController.unitStatus.Selected = true;
             }
-                
         }
     }
 
     public void AddSelectedUnit(UnitController unitController)
     {
+        unitController.unitStatus.Selected = true;
         selectedUnits.Add(unitController);
     }
 
     public void ClearSelectedUnits()
     {
+        foreach (UnitController unitController in selectedUnits)
+        {
+            unitController.unitStatus.Selected = false;
+        }
+
         selectedUnits.Clear();
     }
 
     public int GetSelectedUnitsCount()
     {
         return selectedUnits.Count;
-    }
-
-    public bool isSelected(GameObject gameObject) // TODO: usprawnić to, sprubować z hashem
-    {
-        foreach (UnitController unitController in selectedUnits)
-        {
-            if (unitController.gameObject == gameObject)
-                return true;
-        }
-
-        return false;
     }
 }
